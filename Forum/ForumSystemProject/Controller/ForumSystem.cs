@@ -34,7 +34,7 @@ namespace ForumSystemProject.Controller
 
         bool isUserExists(string userName)
         {
-             _model.executeNonQuery("select * from Users where userName ='" + userName + "'");
+            DataTable dt= _model.executeQuery("select * from Users where userName ='" + userName + "'");
             return true;
         }
 
