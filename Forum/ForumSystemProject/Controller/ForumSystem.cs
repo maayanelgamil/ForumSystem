@@ -31,6 +31,13 @@ namespace ForumSystemProject.Controller
             }
             return _system;
         }
+
+        bool isUserExists(string userName)
+        {
+             _model.executeNonQuery("select * from Users where userName ='" + userName + "'");
+            return true;
+        }
+
         /**
          * 
          * @param ForumId
