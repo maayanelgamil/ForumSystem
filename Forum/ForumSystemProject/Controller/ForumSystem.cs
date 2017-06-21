@@ -72,7 +72,7 @@ namespace ForumSystemProject.Controller
          * 
          * @param guestId
          */
-        public void findGuest(int guestId) //*********************//
+        public void findUser(int userId) //*********************//
         {
             // TODO - implement ForumSystem.findGuest
             throw new NotImplementedException();
@@ -96,7 +96,7 @@ namespace ForumSystemProject.Controller
          * @param Password
          * @param GuestId
          */
-        public void newUserAccount(int ForumId, int UserName, int Password, int GuestId)
+        public void newUserAccount(int ForumId, int UserName, int Password)
         {
             // TODO - implement ForumSystem.newUserAccount
             throw new NotImplementedException();
