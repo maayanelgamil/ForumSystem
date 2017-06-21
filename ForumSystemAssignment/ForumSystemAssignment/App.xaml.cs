@@ -1,5 +1,4 @@
-﻿using ForumSystemProject.Controller;
-using ForumSystemProject.Model;
+﻿using ForumSystemAssignment.Controller;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ForumSystemProject
+namespace ForumSystemAssignment
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -17,11 +16,11 @@ namespace ForumSystemProject
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            IController controller = new Controller.Controller();
-            IModel model = new ForumSystem(controller);
+            IController controller = null;//new Controller.Controller();
+                                          // IModel model = ForumSystem.getInstance(controller);
             MainWindow view = new MainWindow(ref controller);
-            controller.setModel(model);
-            controller.setView(view);
+            //controller.setModel(model);
+            //controller.setView(view);
             view.Show();
         }
     }

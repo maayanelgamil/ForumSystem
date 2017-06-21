@@ -2,21 +2,31 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using ForumSystemProject.Controller;
+using ForumSystemAssignment.Controller;
 
-namespace ForumSystemProject.Model
+namespace ForumSystemAssignment.Model
 {
     public class ForumSystem : IModel
     {
+        private static ForumSystem _system = null;
 
         List<Forum> contained;
         List<GuestUser> contains;
         IController _controller;
 
 
-        public ForumSystem(IController controller)
+        private ForumSystem(IController controller)
         {
             _controller = controller;
+        }
+
+        public static ForumSystem getInstance(IController controller)
+        {
+            if (_system == null)
+            {
+                _system = new ForumSystem(controller);
+            }
+            return _system;
         }
         /**
          * 
