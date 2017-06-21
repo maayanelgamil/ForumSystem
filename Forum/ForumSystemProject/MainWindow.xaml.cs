@@ -24,10 +24,15 @@ namespace ForumSystemProject
     {
         IController controller;
 
-        public MainWindow(ref IController _controller)
+        public MainWindow()
         {
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //InitializeComponent();
+        }
+
+        public MainWindow(ref IController _controller) : base()
+        {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             controller = _controller;
         }
 
