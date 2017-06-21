@@ -96,12 +96,11 @@ namespace ForumSystemProject.Controller
          * @param Password
          * @param GuestId
          */
-        public void newUserAccount(int ForumId, int UserName, int Password)
+        public bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email)
         {
-            // TODO - implement ForumSystem.newUserAccount
-            throw new NotImplementedException();
+            string command = "Insert Into Users values('" + UserName + "', '" + Password + "', '" + firstName + "', '" + lastName + "','"+ email +"',"+ -1 +")";
+            return _model.executeNonQuery(command);
         }
-
 
         /**
          * 
