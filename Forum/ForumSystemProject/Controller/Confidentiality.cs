@@ -1,4 +1,4 @@
-namespace ForumSystemProject.Model
+namespace ForumSystemProject.Controller
 {
     public class Confidentiality : Rule
     {

@@ -1,5 +1,5 @@
 using System;
-namespace ForumSystemProject.Model
+namespace ForumSystemProject.Controller
 {
     public class UserAccount
     {

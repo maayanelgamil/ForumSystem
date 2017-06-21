@@ -1,5 +1,5 @@
 ﻿
-using ForumSystemProject.Model;
+using ForumSystemProject.myModel;
 using ForumSystemProject.View;
 using System;
 using System.Collections.Generic;

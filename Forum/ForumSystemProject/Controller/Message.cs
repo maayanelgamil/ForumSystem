@@ -1,7 +1,7 @@
 
 using System;
 using System.Collections.Generic;
-namespace ForumSystemProject.Model
+namespace ForumSystemProject.Controller
 {
     public class Message
     {

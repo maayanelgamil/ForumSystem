@@ -1,5 +1,5 @@
 ﻿using ForumSystemProject.Controller;
-using ForumSystemProject.Model;
+using ForumSystemProject.myModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -17,11 +17,11 @@ namespace ForumSystemProject
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            IController controller = null;//new Controller.Controller();
-                                          // IModel model = ForumSystem.getInstance(controller);
+            IController controller = ForumSystem.getInstance();
+            IModel model = new Model(controller);
             MainWindow view = new MainWindow(ref controller);
-            //controller.setModel(model);
-            //controller.setView(view);
+            controller.setModel(model);
+            controller.setView(view);
             view.Show();
         }
     }
