@@ -98,7 +98,7 @@ namespace ForumSystemProject.Controller
          */
         public bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email)
         {
-            string command = "Insert Into Users values('" + UserName + "', '" + Password + "', '" + firstName + "', '" + lastName + "','"+ email +"',"+ -1 +")";
+            string command = "Insert Into Users values('" + UserName + "', '" + Password + "', '" + firstName + "', '" + lastName + "','" + email + "'," + -1 + ")";
             return _model.executeNonQuery(command);
         }
 
@@ -195,70 +195,6 @@ namespace ForumSystemProject.Controller
         {
             // TODO - implement ForumSystem.retriveMessage
             throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Implements an execution of a non query on the database
-        /// </summary>
-        /// <param name="query">The query to execute</param>
-        /// <returns>The requested dataTable if exists otherwise null</returns>
-        public DataTable executeQuery(string query)
-        {
-            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            DataTable dt = null;
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand(query, connection);
-                OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
-                dt = new DataTable();
-                tableAdapter.Fill(dt);
-                if (dt.Rows.Count == 0)
-                {
-                    return null;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return dt;
-        }
-
-        /// <summary>
-        /// Implements an execution of a query on the database
-        /// </summary>
-        /// <param name="command">The command to execute</param>
-        /// <returns>True if succeeded otherwise false</returns>
-        public bool executeNonQuery(string _command)
-        {
-            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            int numOfAffected = 0;
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand(_command);
-                command.Connection = connection;
-                numOfAffected = command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            if (numOfAffected != 0)
-                return true;
-            else
-                return false;
         }
 
         public DataTable getFirstNameData(string mail)
