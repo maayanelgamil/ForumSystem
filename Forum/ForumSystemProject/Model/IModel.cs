@@ -11,6 +11,5 @@ namespace ForumSystemProject.Model
     {
         DataTable executeQuery(string query);
         bool executeNonQuery(string command);
-        bool sendConfirmationMail(string mail, string firstName);
     }
 }

@@ -15,7 +15,6 @@ namespace ForumSystemProject.Controller
         DataTable getFirstNameData(string mail);
         DataTable connect(string mail, string password);
         bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone);
-        bool sendConfirmationMail(string mail, string firstName);
         DataTable getAreas();
         DataTable getAdvertisments(string type, string id);
         DataTable getPartnershipsByCity(string type, string city);

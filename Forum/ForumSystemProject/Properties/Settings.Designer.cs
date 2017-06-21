@@ -22,5 +22,18 @@ namespace ForumSystemProject.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=ForumSystemProject.accdb;\r\nPersist " +
+            "Security Info=False;")]
+        public string DBConnectionString {
+            get {
+                return ((string)(this["DBConnectionString"]));
+            }
+            set {
+                this["DBConnectionString"] = value;
+            }
+        }
     }
 }

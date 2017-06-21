@@ -52,11 +52,6 @@ namespace ForumSystemProject.Controller
             return model.executeNonQuery(command);
         }
 
-        public bool sendConfirmationMail(string mail, string firstName)
-        {
-            return model.sendConfirmationMail(mail, firstName);
-        }
-
         public DataTable getAreas()
         {
             string query = "select * from InterestArea";
@@ -92,6 +87,7 @@ namespace ForumSystemProject.Controller
             string command = "Insert Into UsersPreferencesApartments (mail, profileType, Smoke, Animals, squareFt, Hobbies) VALUES ('" + mail + "', '" + profileType + "', '" + smoke + "', '" + pets + "', '" + sqft + "', '" + hobbies + "')";
             return model.executeNonQuery(command);
         }
+
     }
 }
 
