@@ -70,7 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\IModel.cs" />
+    <Compile Include="myModel\IModel.cs" />
+    <Compile Include="myModel\Model.cs" />
     <Compile Include="View\IView.cs" />
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -92,7 +93,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -146,30 +146,30 @@
     <Resource Include="View\photo\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ActionLogger.cs" />
-    <Compile Include="Model\Complain.cs" />
-    <Compile Include="Model\Complaint.cs" />
-    <Compile Include="Model\Confidentiality.cs" />
-    <Compile Include="Model\Disscusion.cs" />
-    <Compile Include="Model\ErrorLogger.cs" />
-    <Compile Include="Model\Forum.cs" />
-    <Compile Include="Model\ForumSystem.cs" />
-    <Compile Include="Model\FriendGroup.cs" />
-    <Compile Include="Model\GroupMessage.cs" />
-    <Compile Include="Model\GuestUser.cs" />
-    <Compile Include="Model\Logger.cs" />
-    <Compile Include="Model\Manager.cs" />
-    <Compile Include="Model\Managment.cs" />
-    <Compile Include="Model\Message.cs" />
-    <Compile Include="Model\Permission.cs" />
-    <Compile Include="Model\Photo.cs" />
-    <Compile Include="Model\Policy.cs" />
-    <Compile Include="Model\Rule.cs" />
-    <Compile Include="Model\SubForum.cs" />
-    <Compile Include="Model\SubForumManager.cs" />
-    <Compile Include="Model\Text.cs" />
-    <Compile Include="Model\UserAccount.cs" />
-    <Compile Include="Model\Video.cs" />
+    <Compile Include="Controller\ActionLogger.cs" />
+    <Compile Include="Controller\Complain.cs" />
+    <Compile Include="Controller\Complaint.cs" />
+    <Compile Include="Controller\Confidentiality.cs" />
+    <Compile Include="Controller\Disscusion.cs" />
+    <Compile Include="Controller\ErrorLogger.cs" />
+    <Compile Include="Controller\Forum.cs" />
+    <Compile Include="Controller\ForumSystem.cs" />
+    <Compile Include="Controller\FriendGroup.cs" />
+    <Compile Include="Controller\GroupMessage.cs" />
+    <Compile Include="Controller\GuestUser.cs" />
+    <Compile Include="Controller\Logger.cs" />
+    <Compile Include="Controller\Manager.cs" />
+    <Compile Include="Controller\Managment.cs" />
+    <Compile Include="Controller\Message.cs" />
+    <Compile Include="Controller\Permission.cs" />
+    <Compile Include="Controller\Photo.cs" />
+    <Compile Include="Controller\Policy.cs" />
+    <Compile Include="Controller\Rule.cs" />
+    <Compile Include="Controller\SubForum.cs" />
+    <Compile Include="Controller\SubForumManager.cs" />
+    <Compile Include="Controller\Text.cs" />
+    <Compile Include="Controller\UserAccount.cs" />
+    <Compile Include="Controller\Video.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="View\photo\logo.png" />

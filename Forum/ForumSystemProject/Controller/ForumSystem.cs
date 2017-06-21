@@ -5,28 +5,29 @@ using System.Data;
 using ForumSystemProject.Controller;
 using System.Windows;
 using System.Data.OleDb;
+using ForumSystemProject.myModel;
+using ForumSystemProject.View;
 
-namespace ForumSystemProject.Model
+namespace ForumSystemProject.Controller
 {
-    public class ForumSystem : IModel
+    public class ForumSystem : IController
     {
         private static ForumSystem _system = null;
 
         List<Forum> contained;
         List<GuestUser> contains;
-        IController _controller;
+        IView _view;
+        IModel _model;
 
 
-        private ForumSystem(IController controller)
-        {
-            _controller = controller;
-        }
+        private ForumSystem()
+        { }
 
-        public static ForumSystem getInstance(IController controller)
+        public static ForumSystem getInstance()
         {
             if (_system == null)
             {
-                _system = new ForumSystem(controller);
+                _system = new ForumSystem();
             }
             return _system;
         }
@@ -261,5 +262,59 @@ namespace ForumSystemProject.Model
                 return false;
         }
 
+        public DataTable getFirstNameData(string mail)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable connect(string mail, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable getAreas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable getAdvertisments(string type, string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable getPartnershipsByCity(string type, string city)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable getCitiesPartnerShips(string type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable getInterestAreas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void setView(IView view)
+        {
+            _view = view;
+        }
+
+        public void setModel(IModel model)
+        {
+            _model = model;
+        }
+
+        public bool createNewAppartmentPreference(string mail, string profileType, string smoke, string pets, string sqft, string hobbies)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
