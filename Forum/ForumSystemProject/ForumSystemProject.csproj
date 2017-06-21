@@ -143,9 +143,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\photo\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Controller\ActionLogger.cs" />
     <Compile Include="Controller\Complain.cs" />
     <Compile Include="Controller\Complaint.cs" />
@@ -172,9 +169,6 @@
     <Compile Include="Controller\Video.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="View\photo\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -185,6 +179,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\photo\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\photo\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
