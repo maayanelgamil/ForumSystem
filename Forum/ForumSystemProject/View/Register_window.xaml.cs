@@ -28,41 +28,10 @@ namespace ForumSystemProject.View
         /// <param name="e"></param>
         private void b_fin_Click(object sender, RoutedEventArgs e)
         {
-            if ((bool)!cb_regelations.IsChecked)
-            {
-                MessageBox.Show("יש לסמן כי קראת את התקנון");
-                return;
-            }
             if (!IsInputValid())
                 return;
 
-            if (isMailExists(tb_mail.Text))
-            {
-                MessageBox.Show("קיים משתמש עם המייל שהוזן, הזן מייל אחר");
-                return;
-            }
-
-            if (!sendConfirmationMail())
-                return;
-
-            string connectionString = "";//ForumSystemProject.Properties.Settings.Default.DBconnection;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand("Insert Into Users values ('" + tb_mail.Text + "','" + tb_password.Text + "','" + tb_firstName.Text + "','" + tb_lastName.Text + "','" + tb_birthDate.Text + "','" + tb_city.Text + "','" + tb_phone.Text + "')");
-                command.Connection = connection;
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            Close();
+            
         }
 
         /// <summary>
@@ -136,7 +105,7 @@ namespace ForumSystemProject.View
         /// </summary>
         private bool IsInputValid()
         {
-            if (tb_birthDate.Text == "" || tb_city.Text == "" || tb_firstName.Text == "" || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" || tb_phone.Text == "")
+            if ( tb_firstName.Text == "" || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" ) ///************ need to fix *************///
             {
                 MessageBox.Show("יש למלא את כל השדות");
                 return false;
