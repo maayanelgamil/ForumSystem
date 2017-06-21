@@ -71,7 +71,7 @@ namespace ForumSystemProject.Model
          * 
          * @param guestId
          */
-        public void findGuest(int guestId)
+        public void findGuest(int guestId) //*********************//
         {
             // TODO - implement ForumSystem.findGuest
             throw new NotImplementedException();
@@ -82,7 +82,7 @@ namespace ForumSystemProject.Model
          * @param ForumId
          * @param ChoosenRole
          */
-        public void getManagerList(int ForumId, int ChoosenRole)
+        public void getManagerList(int ForumId, int ChosenRole)
         {
             // TODO - implement ForumSystem.getManagerList
             throw new NotImplementedException();
@@ -101,30 +101,6 @@ namespace ForumSystemProject.Model
             throw new NotImplementedException();
         }
 
-        /**
-         * 
-         * @param ForumId
-         * @param UserName
-         * @param content
-         * @param choosenRole
-         * @param SubForumMngrId
-         */
-        public void addComplaint(int ForumId, int UserName, int content, int choosenRole, int SubForumMngrId)
-        {
-            // TODO - implement ForumSystem.addComplaint
-            throw new NotImplementedException();
-        }
-
-        /**
-         * 
-         * @param ForumId
-         * @param UserName
-         */
-        public void checkManagerPolicy(int ForumId, int UserName)
-        {
-            // TODO - implement ForumSystem.checkManagerPolicy
-            throw new NotImplementedException();
-        }
 
         /**
          * 
@@ -167,7 +143,7 @@ namespace ForumSystemProject.Model
          * @param title
          * @param data
          */
-        public void newGroupMessage(int ForumId, int freindsGroupId, int UserName, int title, int data)
+        public void newGroupMessage(int ForumId, int friendsGroupId, int UserName, int title, int data)
         {
             // TODO - implement ForumSystem.newGroupMessage
             throw new NotImplementedException();
