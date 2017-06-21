@@ -267,9 +267,10 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        public DataTable connect(string mail, string password)
+        public DataTable connect(string name, string password)
         {
-            throw new NotImplementedException();
+            string query = "select * from Users where mail = '" + name + "'" + " and password = '" + password + "'";
+            return _model.executeQuery(query);
         }
 
         public bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone)
