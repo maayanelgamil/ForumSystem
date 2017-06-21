@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controller\IController.cs" />
+    <Compile Include="Model\ActionLogger.cs" />
+    <Compile Include="Model\Complain.cs" />
+    <Compile Include="Model\Complaint.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="View\IView.cs" />
     <Page Include="MainWindow.xaml">
