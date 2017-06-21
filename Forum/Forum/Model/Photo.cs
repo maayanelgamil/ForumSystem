@@ -1,6 +1,8 @@
-public class Photo : GroupMessage
+namespace ForumSystemProject.Model
 {
+    public class Photo : GroupMessage
+    {
 
-    private string Data;
-
+        private string Data;
+    }
 }

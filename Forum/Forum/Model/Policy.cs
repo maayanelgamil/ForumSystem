@@ -2,20 +2,22 @@
 using System;
 using System.Collections.Generic;
 
-public class Policy
+namespace ForumSystemProject.Model
 {
-
-    List<Forum> defines;
-    List<Rule> Composed;
-
-    /**
-	 * 
-	 * @param U
-	 */
-    public void checkpolicyForManager(int U)
+    public class Policy
     {
-        // TODO - implement Policy.checkpolicyForManager
-        throw new NotImplementedException();
-    }
 
+        List<Forum> defines;
+        List<Rule> Composed;
+
+        /**
+         * 
+         * @param U
+         */
+        public void checkpolicyForManager(int U)
+        {
+            // TODO - implement Policy.checkpolicyForManager
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -1,3 +1,6 @@
-public class Complain : Rule
+namespace ForumSystemProject.Model
 {
+    public class Complain : Rule
+    {
+    }
 }

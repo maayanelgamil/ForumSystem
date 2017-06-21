@@ -2,27 +2,30 @@
 using System;
 using System.Collections.Generic;
 
-public class FriendGroup
+namespace ForumSystemProject.Model
 {
-
-    List<GroupMessage> recieves;
-    Forum belongsTo;
-    List<UserAccount> friends;
-
-    public void createFriendsGroup()
+    public class FriendGroup
     {
-        // TODO - implement FriendGroup.createFriendsGroup
-        throw new NotImplementedException();
-    }
 
-    /**
-	 * 
-	 * @param u
-	 */
-    public void addUserAccount(int u)
-    {
-        // TODO - implement FriendGroup.addUserAccount
-        throw new NotImplementedException();
-    }
+        List<GroupMessage> recieves;
+        Forum belongsTo;
+        List<UserAccount> friends;
 
+        public void createFriendsGroup()
+        {
+            // TODO - implement FriendGroup.createFriendsGroup
+            throw new NotImplementedException();
+        }
+
+        /**
+         * 
+         * @param u
+         */
+        public void addUserAccount(int u)
+        {
+            // TODO - implement FriendGroup.addUserAccount
+            throw new NotImplementedException();
+        }
+
+    }
 }

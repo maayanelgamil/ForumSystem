@@ -1,3 +1,6 @@
-public class Confidentiality : Rule
+namespace ForumSystemProject.Model
 {
+    public class Confidentiality : Rule
+    {
+    }
 }

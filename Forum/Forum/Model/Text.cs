@@ -1,6 +1,9 @@
-public class Text : GroupMessage
+namespace ForumSystemProject.Model
 {
+    public class Text : GroupMessage
+    {
 
-    private string Content;
+        private string Content;
 
+    }
 }

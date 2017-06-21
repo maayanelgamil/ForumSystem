@@ -1,47 +1,49 @@
 using System;
-
-public class UserAccount
+namespace ForumSystemProject.Model
 {
-
-    GroupMessage sends;
-    Complaint complains;
-    SubForumManager subManage;
-    FriendGroup friendIn;
-    UserAccount followedBy;
-    Message post;
-    UserAccount follows;
-    Forum memeberOf;
-    GuestUser members;
-    private string UserName;
-    private string Password;
-    private bool Active;
-
-    /**
-	 * 
-	 * @param nsme
-	 * @param password
-	 */
-    public void createUserAccount(int nsme, int password)
+    public class UserAccount
     {
-        // TODO - implement UserAccount.createUserAccount
-        throw new NotImplementedException();
-    }
 
-    /**
-	 * 
-	 * @param f
-	 * @param g
-	 */
-    public void associateWithForumAndGuest(int f, int g)
-    {
-        // TODO - implement UserAccount.associateWithForumAndGuest
-        throw new NotImplementedException();
-    }
+        GroupMessage sends;
+        Complaint complains;
+        SubForumManager subManage;
+        FriendGroup friendIn;
+        UserAccount followedBy;
+        Message post;
+        UserAccount follows;
+        Forum memeberOf;
+        GuestUser members;
+        private string UserName;
+        private string Password;
+        private bool Active;
 
-    public void getFriendsGroups()
-    {
-        // TODO - implement UserAccount.getFriendsGroups
-        throw new NotImplementedException();
-    }
+        /**
+         * 
+         * @param nsme
+         * @param password
+         */
+        public void createUserAccount(int nsme, int password)
+        {
+            // TODO - implement UserAccount.createUserAccount
+            throw new NotImplementedException();
+        }
 
+        /**
+         * 
+         * @param f
+         * @param g
+         */
+        public void associateWithForumAndGuest(int f, int g)
+        {
+            // TODO - implement UserAccount.associateWithForumAndGuest
+            throw new NotImplementedException();
+        }
+
+        public void getFriendsGroups()
+        {
+            // TODO - implement UserAccount.getFriendsGroups
+            throw new NotImplementedException();
+        }
+
+    }
 }

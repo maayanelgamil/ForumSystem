@@ -12,18 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ForumSystemProject.Controller;
 
 namespace ForumSystemProject
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IView
     {
-        public MainWindow()
+        IController controller;
+
+        public MainWindow(ref IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            //comment
+            controller = _controller;
         }
     }
 }

@@ -1,6 +1,9 @@
-public class ErrorLogger : Logger
+namespace ForumSystemProject.Model
 {
+    public class ErrorLogger : Logger
+    {
 
-    Forum documents;
+        Forum documents;
 
+    }
 }

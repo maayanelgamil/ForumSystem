@@ -1,6 +1,9 @@
-public class ActionLogger : Logger
+namespace ForumSystemProject.Model
 {
+    public class ActionLogger : Logger
+    {
 
-    Forum documents;
+        Forum documents;
 
+    }
 }
