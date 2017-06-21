@@ -52,7 +52,7 @@ namespace ForumSystemProject
 
         private void register_click(object sender, RoutedEventArgs e)
         {
-            Register_window RegWin = new Register_window();
+            Register_window RegWin = new Register_window(ref controller);
             Visibility = Visibility.Hidden;
             RegWin.Closed += RegWin_Closed;
             RegWin.Show();
