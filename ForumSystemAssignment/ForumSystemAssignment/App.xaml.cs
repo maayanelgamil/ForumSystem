@@ -18,7 +18,7 @@ namespace ForumSystemAssignment
         {
             IController controller = null;//new Controller.Controller();
                                           // IModel model = ForumSystem.getInstance(controller);
-            MainWindow view = new MainWindow(ref controller);
+            MainWindow view = new MainWindow(controller);
             //controller.setModel(model);
             //controller.setView(view);
             view.Show();

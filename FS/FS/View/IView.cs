@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSystemProject.View
+namespace FS.View
 {
     public interface IView
     {
     }
 }
-

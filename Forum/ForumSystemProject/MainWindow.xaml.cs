@@ -20,7 +20,7 @@ namespace ForumSystemProject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IView
+    public partial class MainWindow : Window
     {
         IController controller;
 
