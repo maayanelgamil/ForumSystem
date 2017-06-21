@@ -20,16 +20,12 @@ namespace ForumSystemProject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IView
     {
         IController controller;
 
-        public MainWindow()
-        {
-            //InitializeComponent();
-        }
 
-        public MainWindow(ref IController _controller) : base()
+        public MainWindow(ref IController _controller)
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -56,10 +52,10 @@ namespace ForumSystemProject
 
         private void register_click(object sender, RoutedEventArgs e)
         {
-            //Register_window RegWin = new Register_window(controller);
+            Register_window RegWin = new Register_window();
             Visibility = Visibility.Hidden;
-            //RegWin.Closed += RegWin_Closed;
-            //RegWin.Show();
+            RegWin.Closed += RegWin_Closed;
+            RegWin.Show();
         }
     }
 }

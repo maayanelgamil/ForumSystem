@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using ForumSystemProject.Model;
+using ForumSystemProject.View;
 
 namespace ForumSystemProject.Controller
 {

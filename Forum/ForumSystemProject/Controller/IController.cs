@@ -1,5 +1,6 @@
 ﻿
 using ForumSystemProject.Model;
+using ForumSystemProject.View;
 using System;
 using System.Collections.Generic;
 using System.Data;
