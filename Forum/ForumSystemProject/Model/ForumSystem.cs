@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using ForumSystemProject.Controller;
+using System.Windows;
+using System.Data.OleDb;
 
 namespace ForumSystemProject.Model
 {
@@ -219,19 +221,69 @@ namespace ForumSystemProject.Model
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Implements an execution of a non query on the database
+        /// </summary>
+        /// <param name="query">The query to execute</param>
+        /// <returns>The requested dataTable if exists otherwise null</returns>
         public DataTable executeQuery(string query)
         {
-            throw new NotImplementedException();
+            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
+            OleDbConnection connection = new OleDbConnection(connectionString);
+            DataTable dt = null;
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand(query, connection);
+                OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
+                dt = new DataTable();
+                tableAdapter.Fill(dt);
+                if (dt.Rows.Count == 0)
+                {
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
         }
 
-        public bool executeNonQuery(string command)
+        /// <summary>
+        /// Implements an execution of a query on the database
+        /// </summary>
+        /// <param name="command">The command to execute</param>
+        /// <returns>True if succeeded otherwise false</returns>
+        public bool executeNonQuery(string _command)
         {
-            throw new NotImplementedException();
+            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
+            OleDbConnection connection = new OleDbConnection(connectionString);
+            int numOfAffected = 0;
+            try
+            {
+                connection.Open();
+                OleDbCommand command = new OleDbCommand(_command);
+                command.Connection = connection;
+                numOfAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            if (numOfAffected != 0)
+                return true;
+            else
+                return false;
         }
 
-        public bool sendConfirmationMail(string mail, string firstName)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

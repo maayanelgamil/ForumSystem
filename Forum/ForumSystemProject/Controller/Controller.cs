@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using ForumSystemProject.Model;
+using ForumSystemProject.View;
 
 namespace ForumSystemProject.Controller
 {
@@ -91,6 +92,7 @@ namespace ForumSystemProject.Controller
             string command = "Insert Into UsersPreferencesApartments (mail, profileType, Smoke, Animals, squareFt, Hobbies) VALUES ('" + mail + "', '" + profileType + "', '" + smoke + "', '" + pets + "', '" + sqft + "', '" + hobbies + "')";
             return model.executeNonQuery(command);
         }
+
     }
 }
 
