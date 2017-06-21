@@ -197,14 +197,15 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        public DataTable getFirstNameData(string mail)
+        public DataTable getFirstNameData(string name)
         {
-            throw new NotImplementedException();
+            string query = ("select firstName from Users where userName='" + name + "'");
+            return _model.executeQuery(query);
         }
 
         public DataTable connect(string name, string password)
         {
-            string query = "select * from Users where mail = '" + name + "'" + " and password = '" + password + "'";
+            string query = "select * from Users where userName = '" + name + "'" + " and password = '" + password + "'";
             return _model.executeQuery(query);
         }
 
