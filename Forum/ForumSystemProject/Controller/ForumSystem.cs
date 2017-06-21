@@ -32,10 +32,10 @@ namespace ForumSystemProject.Controller
             return _system;
         }
 
-        bool isUserExists(string userName)
+        public bool isUserExists(string userName)
         {
             DataTable dt= _model.executeQuery("select * from Users where userName ='" + userName + "'");
-            return true;
+            return (dt.Select().Length > 0);
         }
 
         /**

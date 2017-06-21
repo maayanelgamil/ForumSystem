@@ -12,9 +12,10 @@ namespace ForumSystemProject.Controller
 {
     public interface IController
     {
+        bool isUserExists(string userName);
         DataTable getFirstNameData(string mail);
         DataTable connect(string mail, string password);
-        bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone);
+        public bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email);
         DataTable getAreas();
         DataTable getAdvertisments(string type, string id);
         DataTable getPartnershipsByCity(string type, string city);
