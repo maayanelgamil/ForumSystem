@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+
 namespace ForumSystemProject.Controller
 {
     [Serializable()]
@@ -12,7 +14,7 @@ namespace ForumSystemProject.Controller
         UserAccount followedBy;
         Message post;
         UserAccount follows;
-        Forum memeberOf;
+        public Forum memeberOf;
         GuestUser members;
         public string UserName;
         public string Password;

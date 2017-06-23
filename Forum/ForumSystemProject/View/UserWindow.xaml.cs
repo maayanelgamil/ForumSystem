@@ -31,6 +31,7 @@ namespace ForumSystemProject.View
             InitializeComponent();
             controller = _controller;
             this.userName = name;
+            this.dropDown.ItemsSource = user.memeberOf.getSubforums();
 
             txt_firstName.Text = "," + name;
         }

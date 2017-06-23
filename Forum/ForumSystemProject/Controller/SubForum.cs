@@ -10,7 +10,7 @@ namespace ForumSystemProject.Controller
         Forum master;
         List<SubForumManager> managedBy;
         List<Disscusion> composed;
-        private string Subject;
+        public string Subject;
         private int subForumId;
 
         /**

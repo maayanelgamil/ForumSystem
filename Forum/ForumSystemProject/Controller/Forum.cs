@@ -1,5 +1,6 @@
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ForumSystemProject.Controller
@@ -43,6 +44,11 @@ namespace ForumSystemProject.Controller
         {
             // TODO - implement Forum.findUserAccount
             throw new NotImplementedException();
+        }
+
+        internal IEnumerable getSubforums()
+        {
+            return subForumDict.Values;
         }
 
         /**
