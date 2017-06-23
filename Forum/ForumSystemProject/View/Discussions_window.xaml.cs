@@ -21,8 +21,7 @@ namespace ForumSystemProject.View
     public partial class Discussions_window : Window
     {
         IController controller;
-        List<Disscusion> discussions { get; set; }
-        SubForum currentSubForums;
+        public List<Disscusion> discussions { get; set; }
 
         public Discussions_window(ref IController _controller, SubForum current)
         {
@@ -30,6 +29,7 @@ namespace ForumSystemProject.View
             InitializeComponent();
             controller = _controller;
             discussions = current.getDiscussions();
+            this.DataContext = this;
         }
 
 

@@ -31,6 +31,7 @@ namespace ForumSystemProject.Controller
             Subject = _subject;
             subForumId = id;
             master = _master;
+            composed = new List<Disscusion>();
         }
 
         /**
@@ -90,9 +91,10 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        internal void createNewDiscussion(int subject)
+        public void createNewDiscussion(string subject, Message opening)
         {
-            throw new NotImplementedException();
+            Disscusion d = new Disscusion(this, subject, new Message());
+            composed.Add(d);
         }
     }
 }

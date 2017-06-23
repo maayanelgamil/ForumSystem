@@ -33,6 +33,8 @@ namespace ForumSystemProject.Controller
             SubForum sf1 = new SubForum("Hapoel Beer-Sheva", 1, f1);
             SubForum sf2 = new SubForum("Maccabi Haifa", 2, f1);
 
+            sf1.createNewDiscussion("Dor Alu", new Message());
+
             f1.subForumDict.Add(1, sf1);
             f1.subForumDict.Add(2, sf2);
 
@@ -90,14 +92,14 @@ namespace ForumSystemProject.Controller
          * @param subject
          * @param UserId
          */
-        public bool newDisscussion(int ForumId, int subForumId, int subject, int UserId)
+        public bool newDisscussion(int ForumId, int subForumId, string subject, int UserId)
         {
             Forum f = findForum(ForumId);
             if (f == null)
                 return false;
 
             SubForum sf = f.findSubForum(subForumId);
-            sf.createNewDiscussion(subject);
+            sf.createNewDiscussion(subject,new Message());
             return true;
         }
 

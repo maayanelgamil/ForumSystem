@@ -6,19 +6,20 @@
         xmlns:local="clr-namespace:ForumSystemProject.View"
         mc:Ignorable="d"
         Title="Discussions_window" Height="300" Width="300">
-            <Grid>
-        <ListView x:Name="list_view" Margin="10" ItemsSource="{Binding Path=discussions}" >
+    <Window.Background>
+        <ImageBrush ImageSource="photo/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <ListView x:Name="list_view" Margin="20" ItemsSource="{Binding Path=discussions}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel>
-                                <TextBlock Text="Subject: " />
-                                <TextBlock Text="{Binding Subject}" FontWeight="Bold" />
-                                <TextBlock Text="\n" />
-                                <TextBlock Text="Number Of Comment: " />
-                                <TextBlock Text="{Binding Length}" FontWeight="Bold" />
-                        <TextBlock Text=" (" />
-                    </WrapPanel>
-                        </DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="Subject: " />
+                        <TextBlock Text="{Binding Subject}" FontWeight="Bold" />
+                        <TextBlock Text="Number Of Comment: " />
+                        <TextBlock Text="{Binding discussions.Count.toString()}" FontWeight="Bold" />
+                    </StackPanel>
+                </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
