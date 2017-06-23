@@ -1,0 +1,25 @@
+﻿<Window x:Class="ForumSystemProject.View.Discussions_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForumSystemProject.View"
+        mc:Ignorable="d"
+        Title="Discussions_window" Height="300" Width="300">
+            <Grid>
+        <ListView x:Name="list_view" Margin="10" ItemsSource="{Binding Path=discussions}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Subject: " />
+                                <TextBlock Text="{Binding Subject}" FontWeight="Bold" />
+                                <TextBlock Text="\n" />
+                                <TextBlock Text="Number Of Comment: " />
+                                <TextBlock Text="{Binding Length}" FontWeight="Bold" />
+                        <TextBlock Text=" (" />
+                    </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+</Window>

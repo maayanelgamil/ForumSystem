@@ -25,7 +25,7 @@
         <TextBlock Text="Home" FontWeight="Bold" FontSize="32" FontFamily="Algerian"  Margin="124,26,111,27" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" />
         <TextBlock Text="שלום" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="83.667,15,32.333,6" />
         <TextBlock x:Name="txt_firstName" TextAlignment="Right" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="9.667,15,91.333,6" />
-        <Button x:Name="search_button"  Content="Watch discussions" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="112,35,0,0" Height="41" Background="#FFFA9034" Grid.Row="3" Grid.RowSpan="2" Click="search_button_Click" Grid.ColumnSpan="2">
+        <Button x:Name="button_watch"  Content="Watch discussions" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="112,35,0,0" Height="41" Background="#FFFA9034" Grid.Row="3" Grid.RowSpan="2" Click="watch_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>

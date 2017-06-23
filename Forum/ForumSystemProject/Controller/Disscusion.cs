@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ForumSystemProject.Controller
 {
@@ -6,9 +7,29 @@ namespace ForumSystemProject.Controller
     public class Disscusion
     {
 
-        SubForum component;
-        Message composed;
-        private string Subject;
+        SubForum parentSf;
+        Message opening;
+        private string subject;
+
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+
+            set
+            {
+                subject = value;
+            }
+        }
+
+        public Disscusion(SubForum sf, string subject, Message _opening)
+        {
+            parentSf = sf;
+            this.subject = subject;
+            opening = _opening;
+        }
 
         /**
          * 
