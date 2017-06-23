@@ -10,18 +10,21 @@ using ForumSystemProject.View;
 
 namespace ForumSystemProject.Controller
 {
+    [Serializable()]
     public class ForumSystem : IController
     {
         private static ForumSystem _system = null;
 
-        List<Forum> contained;
+        Dictionary<int, Forum> forumDict;
         List<GuestUser> contains;
         IView _view;
         IModel _model;
 
 
         private ForumSystem()
-        { }
+        {
+            forumDict = new Dictionary<int, Forum>();
+        }
 
         public static ForumSystem getInstance()
         {
@@ -34,18 +37,18 @@ namespace ForumSystemProject.Controller
 
         public bool isUserExists(string userName)
         {
-            DataTable dt= _model.executeQuery("select * from Users where userName ='" + userName + "'");
-            return (dt.Select().Length > 0);
+            throw new NotImplementedException();
         }
 
         /**
          * 
          * @param ForumId
          */
-        public void findForum(int ForumId)
+        public Forum findForum(int ForumId)
         {
-            // TODO - implement ForumSystem.findForum
-            throw new NotImplementedException();
+            if (!forumDict.ContainsKey(ForumId))
+                return null;
+            return forumDict[ForumId];
         }
 
         /**
@@ -55,10 +58,14 @@ namespace ForumSystemProject.Controller
          * @param subject
          * @param UserId
          */
-        public void newDisscussion(int ForumId, int subForumId, int subject, int UserId)
+        public bool newDisscussion(int ForumId, int subForumId, int subject, int UserId)
         {
-            // TODO - implement ForumSystem.newDisscussion
-            throw new NotImplementedException();
+            Forum f = findForum(ForumId);
+            if (f == null)
+                return false;
+            
+            SubForum sf = f.findSubForum(subForumId);
+            sf.createNewDiscussion(subject);
         }
 
         /**
@@ -105,8 +112,7 @@ namespace ForumSystemProject.Controller
          */
         public bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email)
         {
-            string command = "Insert Into Users values('" + UserName + "', '" + Password + "', '" + firstName + "', '" + lastName + "','" + email + "'," + -1 + ")";
-            return _model.executeNonQuery(command);
+            throw new NotImplementedException();
         }
 
         /**
@@ -206,14 +212,12 @@ namespace ForumSystemProject.Controller
 
         public DataTable getFirstNameData(string name)
         {
-            string query = ("select firstName from Users where userName='" + name + "'");
-            return _model.executeQuery(query);
+            throw new NotImplementedException();
         }
 
         public DataTable connect(string name, string password)
         {
-            string query = "select * from Users where userName = '" + name + "'" + " and password = '" + password + "'";
-            return _model.executeQuery(query);
+            throw new NotImplementedException();
         }
 
         public bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone)

@@ -1,8 +1,10 @@
 
 using System.Collections.Generic;
+using System;
 
 namespace ForumSystemProject.Controller
 {
+    [Serializable()]
     public class GuestUser
     {
 

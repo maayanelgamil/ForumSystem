@@ -39,7 +39,7 @@ namespace ForumSystemProject
 
         private void login_click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow(controller);
+            LoginWindow loginWindow = new LoginWindow(ref controller);
             this.Visibility = Visibility.Hidden;
             loginWindow.Closed += LoginWindow_Closed;
             loginWindow.Show();
@@ -52,7 +52,7 @@ namespace ForumSystemProject
 
         private void register_click(object sender, RoutedEventArgs e)
         {
-            Register_window RegWin = new Register_window();
+            Register_window RegWin = new Register_window(ref controller);
             Visibility = Visibility.Hidden;
             RegWin.Closed += RegWin_Closed;
             RegWin.Show();

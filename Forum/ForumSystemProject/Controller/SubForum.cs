@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace ForumSystemProject.Controller
 {
+    [Serializable()]
     public class SubForum
     {
 
@@ -10,6 +11,7 @@ namespace ForumSystemProject.Controller
         List<SubForumManager> managedBy;
         List<Disscusion> composed;
         private string Subject;
+        private int subForumId;
 
         /**
          * 
@@ -60,6 +62,11 @@ namespace ForumSystemProject.Controller
         public void retriveMessage(int subject, int messageId)
         {
             // TODO - implement SubForum.retriveMessage
+            throw new NotImplementedException();
+        }
+
+        internal void createNewDiscussion(int subject)
+        {
             throw new NotImplementedException();
         }
     }

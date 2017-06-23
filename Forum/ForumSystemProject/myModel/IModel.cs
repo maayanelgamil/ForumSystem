@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForumSystemProject.Controller;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace ForumSystemProject.myModel
 {
     public interface IModel
     {
-        DataTable executeQuery(string query);
-        bool executeNonQuery(string command);
+
+        void serialize();
+
+        IController deserialize();
     }
 }

@@ -28,7 +28,7 @@ namespace ForumSystemProject.View
         /// C'tor for the LoginWindow class
         /// </summary>
         /// <param name="_controller"></param>
-        public LoginWindow(IController _controller)
+        public LoginWindow(ref IController _controller)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
