@@ -28,6 +28,7 @@ namespace ForumSystemProject.View
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             controller = _controller;
+            discussions = new List<Disscusion>();
             discussions = current.getDiscussions();
             this.DataContext = this;
         }

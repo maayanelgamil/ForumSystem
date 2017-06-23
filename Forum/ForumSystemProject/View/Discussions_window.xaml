@@ -17,7 +17,7 @@
                         <TextBlock Text="Subject: " />
                         <TextBlock Text="{Binding Subject}" FontWeight="Bold" />
                         <TextBlock Text="Number Of Comment: " />
-                        <TextBlock Text="{Binding discussions.Count.toString()}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding ElementName=list_view, Path=Items.Count, Mode=OneWay}" FontWeight="Bold" />
                     </StackPanel>
                 </DataTemplate>
                     </ListView.ItemTemplate>

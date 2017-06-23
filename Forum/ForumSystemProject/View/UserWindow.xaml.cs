@@ -59,7 +59,7 @@ namespace ForumSystemProject.View
                 MessageBox.Show("No sub forum chosen!");
             else
             {
-                Discussions_window disWin = new Discussions_window(ref controller,(SubForum)dropDown.SelectedItem);
+                Discussions_window disWin = new Discussions_window(ref controller, (SubForum)dropDown.SelectedItem);
                 disWin.Show();
                 this.Visibility = Visibility.Hidden;
                 disWin.Closed += disWin_Closed;
@@ -77,5 +77,21 @@ namespace ForumSystemProject.View
             this.Visibility = Visibility.Visible;
         }
 
+        private void dropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dropDown.SelectedValue != null)
+            {
+                this.button_add.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.button_add.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
