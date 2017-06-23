@@ -11,7 +11,7 @@ namespace ForumSystemProject.Controller
 
         ActionLogger isDocumented;
         List<FriendGroup> friendsGroup;
-        Dictionary<int, SubForum> subForumDict;
+        public Dictionary<int, SubForum> subForumDict;
         Policy definedBy;
         List<UserAccount> userAccounts = new List<UserAccount>();
         List<Manager> managedBy;
@@ -26,6 +26,7 @@ namespace ForumSystemProject.Controller
 
         public Forum(string subject, int id)
         {
+            subForumDict = new Dictionary<int, SubForum>();
             _subject = subject;
             forumID = id;
         }
@@ -52,9 +53,11 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        internal IEnumerable getSubforums()
+        public List<SubForum> getSubforums()
         {
-            return subForumDict.Values;
+            List<SubForum> subForums = new List<SubForum>();
+            subForums.AddRange(subForumDict.Values);
+            return subForums;
         }
 
         /**

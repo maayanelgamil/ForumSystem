@@ -24,6 +24,7 @@ namespace ForumSystemProject.View
     {
         IController controller;
         string userName;
+        public List<SubForum> subForums { get; set; }
 
         public UserWindow(string name, IController _controller, UserAccount user)
         {
@@ -31,7 +32,9 @@ namespace ForumSystemProject.View
             InitializeComponent();
             controller = _controller;
             this.userName = name;
-            this.dropDown.ItemsSource = user.memeberOf.getSubforums();
+            subForums = new List<SubForum>();
+            subForums = user.memeberOf.getSubforums();
+            this.DataContext = this;
 
             txt_firstName.Text = "," + name;
         }
