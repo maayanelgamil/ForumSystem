@@ -28,7 +28,7 @@
             <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Login</TextBlock>
         </Button>
         <Image x:Name="image" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="66" Source="View/photo/logo.png" Margin="231,254,0,0"/>
-        <Button x:Name="button1_Copy" HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top" Width="130" Click="login_click" Height="53" FontWeight="Bold" Background="AliceBlue">
+        <Button x:Name="button1_Copy" Click="guest_Click" HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top" Width="130" Height="53" FontWeight="Bold" Background="AliceBlue">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>

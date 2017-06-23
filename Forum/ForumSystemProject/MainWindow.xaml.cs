@@ -77,5 +77,10 @@ namespace ForumSystemProject
                 throw;
             }
         }
+
+        private void guest_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("This button has no implemenation at the moment.");
+        }
     }
 }
