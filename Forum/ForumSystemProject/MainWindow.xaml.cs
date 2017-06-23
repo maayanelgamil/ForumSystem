@@ -39,7 +39,7 @@ namespace ForumSystemProject
 
         private void login_click(object sender, RoutedEventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow(controller);
+            LoginWindow loginWindow = new LoginWindow(ref controller);
             this.Visibility = Visibility.Hidden;
             loginWindow.Closed += LoginWindow_Closed;
             loginWindow.Show();

@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,58 +20,45 @@ namespace ForumSystemProject.myModel
         {
             _controller = controller;
         }
-        public bool executeNonQuery(string _command)
+
+        public void serialize()
         {
-            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            int numOfAffected = 0;
             try
             {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand(_command);
-                command.Connection = connection;
-                numOfAffected = command.ExecuteNonQuery();
+                Stream TestFileStream = File.Create("forumSystem.txt");
+                BinaryFormatter serializer = new BinaryFormatter();
+                serializer.Serialize(TestFileStream, _controller);
+                TestFileStream.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+
+                throw;
             }
-            finally
-            {
-                connection.Close();
-            }
-            if (numOfAffected != 0)
-                return true;
-            else
-                return false;
+
         }
 
-        public DataTable executeQuery(string query)
+        public bool deserialize()
         {
-            string connectionString = ForumSystemProject.Properties.Settings.Default.DBConnectionString;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            DataTable dt = null;
-            try
+            if (File.Exists("forumSystem.txt"))
             {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand(query, connection);
-                OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
-                dt = new DataTable();
-                tableAdapter.Fill(dt);
-                if (dt.Rows.Count == 0)
+                try
                 {
-                    return null;
+                    Stream fileStream = File.OpenRead("forumSystem.txt");
+                    BinaryFormatter deserializer = new BinaryFormatter();
+                    _controller = (ForumSystem)deserializer.Deserialize(fileStream);
+                    fileStream.Close();
+                    return true;
                 }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return dt;
+            return false;
         }
+
     }
 }

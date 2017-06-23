@@ -33,17 +33,20 @@ namespace ForumSystemProject.View
         private void b_fin_Click(object sender, RoutedEventArgs e)
         {
             if (!IsInputValid())
-                return; 
+                return; //need to display error here **************
+            if (!isUserNameExists(tb_userName.Text))
+                return; //need to display error here
+            //here sign to data table
         }
 
         /// <summary>
         /// This function checks whether an email already exists in the DB
         /// </summary>
-        /// <param name="mail"></param>
-        /// <returns></returns>
-        private bool isUserNameExists()
+        /// <param name="userName"></param>
+        /// <returns>true is userName exists</returns>
+        private bool isUserNameExists(string userName)
         {
-            return true;
+            return controller.isUserExists(userName);
 
         }
 

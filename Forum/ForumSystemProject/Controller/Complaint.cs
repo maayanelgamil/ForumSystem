@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace ForumSystemProject.Controller
 {
+    [Serializable()]
     public class Complaint
     {
 

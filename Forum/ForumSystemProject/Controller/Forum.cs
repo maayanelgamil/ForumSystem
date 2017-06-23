@@ -4,25 +4,29 @@ using System.Collections.Generic;
 
 namespace ForumSystemProject.Controller
 {
+    [Serializable()]
     public class Forum
     {
 
         ActionLogger isDocumented;
         List<FriendGroup> friendsGroup;
-        List<SubForum> sub;
+        Dictionary<int, SubForum> subForumDict;
         Policy definedBy;
         List<UserAccount> userAccount;
         List<Manager> managedBy;
         private string Subject;
+        private int forumID;
 
         /**
          * 
          * @param subForumId
          */
-        public void findSubForum(int subForumId)
+        public SubForum findSubForum(int subForumId)
         {
             // TODO - implement Forum.findSubForum
-            throw new NotImplementedException();
+            if (subForumDict.ContainsKey(subForumId))
+                return null;
+            return subForumDict[subForumId];
         }
 
         /**
