@@ -29,6 +29,13 @@ namespace ForumSystemProject.Controller
             Forum f2 = new Forum("Barbies", 1);
             Forum f3 = new Forum("Dancing", 1);
             Forum f4 = new Forum("Food", 1);
+
+            SubForum sf1 = new SubForum("Hapoel Beer-Sheva", 1, f1);
+            SubForum sf2 = new SubForum("Maccabi Haifa", 2, f1);
+
+            f1.subForumDict.Add(1, sf1);
+            f1.subForumDict.Add(2, sf2);
+
             UserAccount u1 = new UserAccount("kulik", "1234", f1);
             UserAccount u2 = new UserAccount("maayan", "1234", f2);
             UserAccount u3 = new UserAccount("keren", "1234", f3);
@@ -38,11 +45,13 @@ namespace ForumSystemProject.Controller
             forumDict.Add(2, f2);
             forumDict.Add(3, f3);
             forumDict.Add(4, f4);
+
             _users.Add(u1.UserName, u1);
             _users.Add(u2.UserName, u2);
             _users.Add(u3.UserName, u3);
             _users.Add(u4.UserName, u4);
 
+            
         }
 
 

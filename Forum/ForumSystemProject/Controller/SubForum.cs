@@ -10,8 +10,28 @@ namespace ForumSystemProject.Controller
         Forum master;
         List<SubForumManager> managedBy;
         List<Disscusion> composed;
-        public string Subject;
+        private string subject;
         private int subForumId;
+
+        public string Subject
+        {
+            get
+            {
+                return subject;
+            }
+
+            set
+            {
+                subject = value;
+            }
+        }
+
+        public SubForum(string _subject, int id, Forum _master)
+        {
+            Subject = _subject;
+            subForumId = id;
+            master = _master;
+        }
 
         /**
          * 

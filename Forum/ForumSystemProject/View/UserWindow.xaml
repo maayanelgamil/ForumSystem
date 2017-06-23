@@ -30,7 +30,7 @@
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
         </Button>
-        <ComboBox x:Name="dropDown" DisplayMemberPath="Subject" Grid.Column="0" Grid.Row="2"  Margin="21,3.2,152.2,39" DisplayMemberPath="Subject" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="dropDown" ItemsSource="{Binding Path=subForums}" DisplayMemberPath="Subject" Grid.Column="0" Grid.Row="2"  Margin="21,3.2,152.2,39"  Grid.ColumnSpan="2"/>
         <TextBlock Text="Choose SubForum:" FontWeight="Bold" FontSize="14" FontFamily="Guttman-Aharoni" Grid.Row="1" Margin="21,18.6,0,1.8" HorizontalAlignment="Left" Width="139" />
     </Grid>
 </Window>
