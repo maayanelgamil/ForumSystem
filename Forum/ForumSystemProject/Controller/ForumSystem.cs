@@ -15,7 +15,10 @@ namespace ForumSystemProject.Controller
         private static ForumSystem _system = null;
 
         List<Forum> contained;
-        List<GuestUser> contains;
+        List<GuestUser> contains = new List<GuestUser>
+        {
+            new GuestUser(), new GuestUser()
+        };
         IView _view;
         IModel _model;
 
@@ -34,7 +37,7 @@ namespace ForumSystemProject.Controller
 
         bool isUserExists(string userName)
         {
-            DataTable dt= _model.executeQuery("select * from Users where userName ='" + userName + "'");
+            DataTable dt = _model.executeQuery("select * from Users where userName ='" + userName + "'");
             return true;
         }
 

@@ -7,7 +7,11 @@ namespace ForumSystemProject.Controller
     {
 
         List<UserAccount> userAccount;
-        List<ForumSystem> visit;
-
+        ForumSystem _fs;
+        List<Forum> forums;
+        public GuestUser(ForumSystem system)
+        {
+            _fs = system;
+        }
     }
 }
