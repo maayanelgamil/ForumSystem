@@ -40,7 +40,7 @@ namespace ForumSystemProject.View
             else if (!isUserNameExists(tb_userName.Text))
             {
                 Forum f = (Forum)dropDown.SelectedValue;
-                controller.newUserAccount(f, this.tb_mail.Text, tb_password.Text, tb_firstName.Text, tb_lastName.Text, tb_mail.Text);
+                controller.newUserAccount(f, this.tb_userName.Text, tb_password.Text, tb_firstName.Text, tb_lastName.Text, tb_mail.Text);
                 MessageBox.Show("Registration completed");
                 this.Close();
             }
@@ -65,7 +65,7 @@ namespace ForumSystemProject.View
         /// </summary>
         private bool IsInputValid()
         {
-            if (tb_firstName.Text == "" || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" || tb_userName.Text == "") ///************ need to fix *************///
+            if (tb_firstName.Text == "" || dropDown.SelectedValue == null || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" || tb_userName.Text == "") ///************ need to fix *************///
             {
                 MessageBox.Show("Fill in all fields");
                 return false;
