@@ -20,7 +20,7 @@ namespace ForumSystemProject.Controller
         DataTable getAdvertisments(string type, string id);
         DataTable getPartnershipsByCity(string type, string city);
         DataTable getCitiesPartnerShips(string type);
-        IEnumerable getForums();
+        List<Forum> getForums();
         DataTable getInterestAreas();
         void setView(IView _view);
         bool createNewAppartmentPreference(string mail, string profileType, string smoke, string pets, string sqft, string hobbies);

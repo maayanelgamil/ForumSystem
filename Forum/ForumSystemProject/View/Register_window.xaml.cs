@@ -15,15 +15,17 @@ namespace ForumSystemProject.View
     public partial class Register_window : Window
     {
         IController controller;
-        List<Forum> _forums;
+        public List<Forum> forums { get; set; }
         /// <summary>
         /// C'tor for the Register window
         /// </summary>
         public Register_window(ref IController _controller)
         {
+            forums = new List<Forum>();
             controller = _controller;
             InitializeComponent();
-            this.dropDown.ItemsSource = _controller.getForums();
+            forums = _controller.getForums();
+            this.DataContext = this;
         }
 
         /// <summary>

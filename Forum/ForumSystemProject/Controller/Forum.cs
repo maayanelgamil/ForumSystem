@@ -14,12 +14,18 @@ namespace ForumSystemProject.Controller
         Policy definedBy;
         List<UserAccount> userAccount;
         List<Manager> managedBy;
-        public string Subject;
+        private string _subject;
         public int forumID;
+
+        public string Subject
+        {
+            get { return _subject; }
+            set { _subject = value; }
+        }
 
         public Forum(string subject, int id)
         {
-            Subject = subject;
+            _subject = subject;
             forumID = id;
         }
 
