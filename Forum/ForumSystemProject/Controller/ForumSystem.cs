@@ -9,6 +9,7 @@ using ForumSystemProject.View;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
+using System.Linq;
 
 namespace ForumSystemProject.Controller
 {
@@ -17,13 +18,30 @@ namespace ForumSystemProject.Controller
     {
         private static ForumSystem _system = null;
 
-        Dictionary<int, Forum> forumDict;
+        Dictionary<int, Forum> forumDict = new Dictionary<int, Forum>();
         Dictionary<string, UserAccount> _users = new Dictionary<string, UserAccount>();
         [NonSerialized()]
         IView _view;
 
         private ForumSystem()
         {
+            Forum f1 = new Forum("soccer", 1);
+            Forum f2 = new Forum("Barbies", 1);
+            Forum f3 = new Forum("Dancing", 1);
+            Forum f4 = new Forum("Food", 1);
+            UserAccount u1 = new UserAccount("kulik", "1234", f1);
+            UserAccount u2 = new UserAccount("maayan", "1234", f2);
+            UserAccount u3 = new UserAccount("keren", "1234", f3);
+            UserAccount u4 = new UserAccount("ben", "1234", f4);
+
+            forumDict.Add(1, f1);
+            forumDict.Add(2, f2);
+            forumDict.Add(3, f3);
+            forumDict.Add(4, f4);
+            _users.Add(u1.UserName, u1);
+            _users.Add(u2.UserName, u2);
+            _users.Add(u3.UserName, u3);
+            _users.Add(u4.UserName, u4);
 
         }
 
@@ -299,9 +317,11 @@ namespace ForumSystemProject.Controller
             return null;
         }
 
-        public IEnumerable getForums()
+        public List<Forum> getForums()
         {
-            return forumDict.Values;
+            List<Forum> items = new List<Forum>();
+            items.AddRange(forumDict.Values);
+            return items;
         }
     }
 }

@@ -32,7 +32,8 @@ namespace ForumSystemProject
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            controller = ForumSystem.deserialize();
+            //controller = ForumSystem.deserialize();
+            controller = ForumSystem.getInstance();
         }
 
         private void RegWin_Closed(object sender, EventArgs e)
