@@ -5,8 +5,10 @@ using System.Data;
 using ForumSystemProject.Controller;
 using System.Windows;
 using System.Data.OleDb;
-using ForumSystemProject.myModel;
 using ForumSystemProject.View;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections;
 
 namespace ForumSystemProject.Controller
 {
@@ -16,15 +18,15 @@ namespace ForumSystemProject.Controller
         private static ForumSystem _system = null;
 
         Dictionary<int, Forum> forumDict;
-        List<GuestUser> contains;
+        Dictionary<string, UserAccount> _users = new Dictionary<string, UserAccount>();
+        [NonSerialized()]
         IView _view;
-        IModel _model;
-
 
         private ForumSystem()
         {
-            forumDict = new Dictionary<int, Forum>();
+
         }
+
 
         public static ForumSystem getInstance()
         {
@@ -37,7 +39,7 @@ namespace ForumSystemProject.Controller
 
         public bool isUserExists(string userName)
         {
-            throw new NotImplementedException();
+            return _users.ContainsKey(userName);
         }
 
         /**
@@ -63,9 +65,10 @@ namespace ForumSystemProject.Controller
             Forum f = findForum(ForumId);
             if (f == null)
                 return false;
-            
+
             SubForum sf = f.findSubForum(subForumId);
             sf.createNewDiscussion(subject);
+            return true;
         }
 
         /**
@@ -255,14 +258,50 @@ namespace ForumSystemProject.Controller
             _view = view;
         }
 
-        public void setModel(IModel model)
-        {
-            _model = model;
-        }
 
         public bool createNewAppartmentPreference(string mail, string profileType, string smoke, string pets, string sqft, string hobbies)
         {
             throw new NotImplementedException();
+        }
+
+        public static IController deserialize()
+        {
+            if (File.Exists("forumSystem.txt"))
+            {
+                try
+                {
+                    Stream fileStream = File.OpenRead("forumSystem.txt");
+                    BinaryFormatter deserializer = new BinaryFormatter();
+                    IController _controller = (ForumSystem)deserializer.Deserialize(fileStream);
+                    fileStream.Close();
+                    return _controller;
+                }
+                catch (Exception e)
+                {
+
+                    MessageBox.Show(e.Message);
+                }
+
+            }
+            return null;
+        }
+
+        UserAccount IController.connect(string userName, string password)
+        {
+            if (!_users.ContainsKey(userName))
+                return null;
+            else
+            {
+                UserAccount u = _users[userName];
+                if (u.Password.Equals(password))
+                    return u;
+            }
+            return null;
+        }
+
+        public IEnumerable getForums()
+        {
+            return forumDict.Values;
         }
     }
 }

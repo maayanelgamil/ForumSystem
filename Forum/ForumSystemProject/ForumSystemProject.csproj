@@ -70,8 +70,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="myModel\IModel.cs" />
-    <Compile Include="myModel\Model.cs" />
     <Compile Include="View\IView.cs" />
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>

@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ForumSystemProject.Controller;
 using ForumSystemProject.View;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ForumSystemProject
 {
@@ -25,11 +28,11 @@ namespace ForumSystemProject
         IController controller;
 
 
-        public MainWindow(ref IController _controller)
+        public MainWindow()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            controller = _controller;
+            controller = ForumSystem.deserialize();
         }
 
         private void RegWin_Closed(object sender, EventArgs e)
@@ -56,6 +59,22 @@ namespace ForumSystemProject
             Visibility = Visibility.Hidden;
             RegWin.Closed += RegWin_Closed;
             RegWin.Show();
+        }
+
+        private void mainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                Stream TestFileStream = File.Create("forumSystem.txt");
+                BinaryFormatter serializer = new BinaryFormatter();
+                serializer.Serialize(TestFileStream, controller);
+                TestFileStream.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

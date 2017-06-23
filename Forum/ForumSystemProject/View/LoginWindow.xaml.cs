@@ -42,12 +42,12 @@ namespace ForumSystemProject.View
         /// <param name="e"></param>
         private void b_connect_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt = controller.connect(tb_mail.Text, tb_password.Text);
-            if (dt == null)
-                MessageBox.Show("שם המשתמש ו/או הסיסמא אינם תקינים, נסה שנית או הרשם למערכת");
+            UserAccount user = controller.connect(tb_mail.Text, tb_password.Text);
+            if (user == null)
+                MessageBox.Show("Username or Password is invalid. please try again!");
             else
             {
-                UserWindow userWin = new UserWindow(tb_mail.Text, controller);
+                UserWindow userWin = new UserWindow(tb_mail.Text, controller, user);
                 Visibility = Visibility.Hidden;
                 userWin.Closed += UserWin_Closed;
                 userWin.Show();

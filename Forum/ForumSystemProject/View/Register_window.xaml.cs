@@ -15,7 +15,7 @@ namespace ForumSystemProject.View
     public partial class Register_window : Window
     {
         IController controller;
-
+        List<Forum> _forums;
         /// <summary>
         /// C'tor for the Register window
         /// </summary>
@@ -23,6 +23,7 @@ namespace ForumSystemProject.View
         {
             controller = _controller;
             InitializeComponent();
+            this.dropDown.ItemsSource = _controller.getForums();
         }
 
         /// <summary>
@@ -30,13 +31,14 @@ namespace ForumSystemProject.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void b_fin_Click(object sender, RoutedEventArgs e)
+        private void done_Click(object sender, RoutedEventArgs e)
         {
             if (!IsInputValid())
                 return; //need to display error here **************
             if (!isUserNameExists(tb_userName.Text))
                 return; //need to display error here
-            //here sign to data table
+                        //here sign to data table
+
         }
 
         /// <summary>
@@ -56,25 +58,14 @@ namespace ForumSystemProject.View
         /// </summary>
         private bool IsInputValid()
         {
-            if ( tb_firstName.Text == "" || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" || tb_userName.Text== "" ) ///************ need to fix *************///
+            if (tb_firstName.Text == "" || tb_lastName.Text == "" || tb_mail.Text == "" || tb_password.Text == "" || tb_userName.Text == "") ///************ need to fix *************///
             {
-                MessageBox.Show("יש למלא את כל השדות");
+                MessageBox.Show("Fill in all fields");
                 return false;
             }
             return true;
             //************************************************************************************************
             //need to check if the mail is valid and if the phone is valid and if the password is at least 8 chars
-        }
-
-        /// <summary>
-        /// This function activates the hyperlink to the regulations of yad2 website
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
         }
     }
 }

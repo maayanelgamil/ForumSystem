@@ -23,18 +23,16 @@ namespace ForumSystemProject.View
     public partial class UserWindow : Window
     {
         IController controller;
-        string mail;
+        string userName;
 
-        public UserWindow(string mail, IController _controller)
+        public UserWindow(string name, IController _controller, UserAccount user)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             controller = _controller;
-            this.mail = mail;
+            this.userName = name;
 
-            DataTable dt = controller.getFirstNameData(mail);
-            DataRow[] rows = dt.Select();
-            txt_firstName.Text = "," + rows[0]["firstName"].ToString();
+            txt_firstName.Text = "," + name;
         }
 
 

@@ -14,8 +14,8 @@ namespace ForumSystemProject.Controller
         UserAccount follows;
         Forum memeberOf;
         GuestUser members;
-        private string UserName;
-        private string Password;
+        public string UserName;
+        public string Password;
         private bool Active;
 
         /**
@@ -23,10 +23,11 @@ namespace ForumSystemProject.Controller
          * @param nsme
          * @param password
          */
-        public void createUserAccount(int nsme, int password)
+        public UserAccount(string nsme, string password, Forum forum)
         {
-            // TODO - implement UserAccount.createUserAccount
-            throw new NotImplementedException();
+            UserName = nsme;
+            Password = password;
+            memeberOf = forum;
         }
 
         /**
