@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Diagnostics;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Navigation;
 
@@ -70,9 +71,39 @@ namespace ForumSystemProject.View
                 MessageBox.Show("Fill in all fields");
                 return false;
             }
+            else if (!IsValid(tb_mail.Text))
+            {
+                MessageBox.Show("Mail adress in invalid");
+                return false;
+            }
             return true;
             //************************************************************************************************
             //need to check if the mail is valid and if the phone is valid and if the password is at least 8 chars
+        }
+
+        private void txt_firstName_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+
+
+        private static bool IsTextAllowed(string text)
+        {
+            Regex regex = new Regex(@"^[a-zA-Z]+$"); //regex that matches disallowed text
+            return regex.IsMatch(text);
+        }
+        private bool IsValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }
