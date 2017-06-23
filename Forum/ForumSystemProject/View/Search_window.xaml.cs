@@ -42,7 +42,7 @@ namespace ForumSystemProject.View
         /// <param name="connection">The DB connection</param>
         private void getPossibleInterestAreas()
         {
-            DataTable dt = controller.getAreas();
+            /*DataTable dt = controller.getAreas();
 
             DataRow[] rows = dt.Select();
             List<string> areas = new List<string>();
@@ -51,7 +51,7 @@ namespace ForumSystemProject.View
                 areas.Add(dr[1].ToString());
                 interestArea.Add(dr[1].ToString(), dr[0].ToString());
             }
-            box_interest.ItemsSource = areas;
+            box_interest.ItemsSource = areas;*/
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace ForumSystemProject.View
         {
             string type = interestArea[box_interest.SelectedItem.ToString()];
 
-            DataTable dt = controller.getCitiesPartnerShips(type);
+            /*DataTable dt = controller.getCitiesPartnerShips(type);
 
             DataRow[] rows = dt.Select();
             if (rows.Length == 0)
@@ -82,7 +82,7 @@ namespace ForumSystemProject.View
             {
                 locations.Add(dr[0].ToString());
             }
-            box_location.ItemsSource = locations;
+            box_location.ItemsSource = locations;*/
         }
 
         private void box_location_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -106,9 +106,8 @@ namespace ForumSystemProject.View
             string type = interestArea[box_interest.SelectedItem.ToString()];
             string city = box_location.SelectedItem.ToString();
 
-            DataTable dt = controller.getPartnershipsByCity(type, city);
 
-            DataRow[] rows = dt.Select();
+            /*DataRow[] rows = dt.Select();
             List<advertisment> ads = new List<advertisment>();
 
             //Get all the relevant data for an advertisment to display
@@ -124,20 +123,20 @@ namespace ForumSystemProject.View
                 };
                 ads.Add(a);
             }
-            listView.ItemsSource = ads;
+            listView.ItemsSource = ads;*/
             listView.Visibility = Visibility.Visible;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            advertisment ad = button.DataContext as advertisment;
+            /* advertisment ad = button.DataContext as advertisment;
 
-            DataTable dt = controller.getAdvertisments(ad.Type, ad.Id);
+             DataTable dt = controller.getAdvertisments(ad.Type, ad.Id);
 
-            DataRow[] rows = dt.Select();
-            // ViewPartnership vp = new ViewPartnership(rows[0]);
-            // vp.Show();
+             DataRow[] rows = dt.Select();
+             // ViewPartnership vp = new ViewPartnership(rows[0]);
+             // vp.Show();*/
         }
     }
 }

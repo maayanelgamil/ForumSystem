@@ -231,41 +231,6 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        public DataTable getFirstNameData(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable connect(string name, string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable getAreas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable getAdvertisments(string type, string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable getPartnershipsByCity(string type, string city)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable getCitiesPartnerShips(string type)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable getInterestAreas()
-        {
-            throw new NotImplementedException();
-        }
-
         public void setView(IView view)
         {
             _view = view;
