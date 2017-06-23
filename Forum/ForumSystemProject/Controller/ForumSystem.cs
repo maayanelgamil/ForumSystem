@@ -43,6 +43,10 @@ namespace ForumSystemProject.Controller
             _users.Add(u3.UserName, u3);
             _users.Add(u4.UserName, u4);
 
+            f1.addUser(u1);
+            f2.addUser(u2);
+            f3.addUser(u3);
+            f4.addUser(u4);
         }
 
 
@@ -121,18 +125,6 @@ namespace ForumSystemProject.Controller
         public void getManagerList(int ForumId, int ChosenRole)
         {
             // TODO - implement ForumSystem.getManagerList
-            throw new NotImplementedException();
-        }
-
-        /**
-         * 
-         * @param ForumId
-         * @param UserName
-         * @param Password
-         * @param GuestId
-         */
-        public bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email)
-        {
             throw new NotImplementedException();
         }
 
@@ -241,11 +233,6 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        public bool createNewUser(string mail, string password, string firstName, string lastName, string birthDate, string city, string phone)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable getAreas()
         {
             throw new NotImplementedException();
@@ -322,6 +309,13 @@ namespace ForumSystemProject.Controller
             List<Forum> items = new List<Forum>();
             items.AddRange(forumDict.Values);
             return items;
+        }
+
+        public void newUserAccount(Forum forum, string UserName, string Password, string firstName, string lastName, string email)
+        {
+            UserAccount u = new UserAccount(UserName, Password, forum);
+            forum.addUser(u);
+            this._users.Add(UserName, u);
         }
     }
 }

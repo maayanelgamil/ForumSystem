@@ -13,7 +13,7 @@ namespace ForumSystemProject.Controller
         List<FriendGroup> friendsGroup;
         Dictionary<int, SubForum> subForumDict;
         Policy definedBy;
-        List<UserAccount> userAccount;
+        List<UserAccount> userAccounts = new List<UserAccount>();
         List<Manager> managedBy;
         private string _subject;
         public int forumID;
@@ -182,6 +182,11 @@ namespace ForumSystemProject.Controller
         {
             // TODO - implement Forum.retriveMessage
             throw new NotImplementedException();
+        }
+
+        public void addUser(UserAccount u)
+        {
+            this.userAccounts.Add(u);
         }
 
     }

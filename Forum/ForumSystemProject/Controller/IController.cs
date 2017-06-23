@@ -15,7 +15,7 @@ namespace ForumSystemProject.Controller
         bool isUserExists(string userName);
         DataTable getFirstNameData(string mail);
         UserAccount connect(string userName, string password);
-        bool newUserAccount(int ForumId, int UserName, int Password, string firstName, string lastName, string email);
+        void newUserAccount(Forum forum, string UserName, string Password, string firstName, string lastName, string email);
         DataTable getAreas();
         DataTable getAdvertisments(string type, string id);
         DataTable getPartnershipsByCity(string type, string city);

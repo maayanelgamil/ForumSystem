@@ -37,9 +37,14 @@ namespace ForumSystemProject.View
         {
             if (!IsInputValid())
                 return; //need to display error here **************
-            if (!isUserNameExists(tb_userName.Text))
-                return; //need to display error here
-                        //here sign to data table
+            else if (!isUserNameExists(tb_userName.Text))
+            {
+                Forum f = (Forum)dropDown.SelectedValue;
+                controller.newUserAccount(f, this.tb_mail.Text, tb_password.Text, tb_firstName.Text, tb_lastName.Text, tb_mail.Text);
+                MessageBox.Show("Registration completed");
+                this.Close();
+            }
+            else MessageBox.Show("User name already exists");
 
         }
 
