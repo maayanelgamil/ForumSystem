@@ -43,6 +43,11 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
+        public List<Disscusion> getDiscussions()
+        {
+            return composed;
+        }
+
         /**
          * 
          * @param content

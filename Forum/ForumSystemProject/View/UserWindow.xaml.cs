@@ -53,29 +53,29 @@ namespace ForumSystemProject.View
             Visibility = Visibility.Hidden;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        void watch_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("אופציה זו אינה נתמכת בגירסה הנוכחית");
+            if (dropDown.SelectedItem == null)
+                MessageBox.Show("No sub forum chosen!");
+            else
+            {
+                Discussions_window disWin = new Discussions_window(ref controller,(SubForum)dropDown.SelectedItem);
+                disWin.Show();
+                this.Visibility = Visibility.Hidden;
+                disWin.Closed += disWin_Closed;
+            }
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void disWin_Closed(object sender, EventArgs e)
         {
-            MessageBox.Show("אופציה זו אינה נתמכת בגירסה הנוכחית");
+            this.Visibility = Visibility.Visible;
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            //CreateProfileByInterestArea_window addProfileWindow = new CreateProfileByInterestArea_window(controller, mail);
-            //addProfileWindow.Closed += addProfileWindow_Closed; //close this window when add profile is closed
-            ///this.Visibility = Visibility.Hidden; //hide this window until add profile ended
-            //addProfileWindow.Show();
-        }
 
         void addProfileWindow_Closed(object sender, EventArgs e)
         {
             this.Visibility = Visibility.Visible;
         }
-
 
     }
 }
