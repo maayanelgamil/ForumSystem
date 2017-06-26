@@ -5,34 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ForumSystemProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize"
+        Title="MainWindow" Height="600" Width="900" ResizeMode="NoResize"
           Closing="mainWindow_Closing"  >
     <Window.Background>
-        <ImageBrush ImageSource="View/photo/background.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="View/photo/1.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="The Forum" FontWeight="Bold" FontSize="40" FontFamily="Snap ITC"  Margin="142,31,112,230" Grid.Row="0" />
-        <TextBlock Text="System" FontWeight="Bold" FontSize="60" FontFamily="Snap ITC"  Margin="103,59,112,166" Grid.Row="0" />
-        <Button x:Name="button" Content="Register" ToolTip="Create yu own user account" HorizontalAlignment="Left" Height="53" Margin="360,173,0,0" VerticalAlignment="Top" Width="130" Click="register_click" Background="AliceBlue" FontWeight="Bold">
+        <TextBlock Text="The Forum" FontWeight="Bold" FontSize="90" FontFamily="Cooper Black"  Margin="210,99,157,0" Grid.Row="0" Height="135" VerticalAlignment="Top" >
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="3" Opacity="0.5"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Text="System" FontWeight="Bold" FontSize="75" FontFamily="Cooper Black"  Margin="304,194,302,285" Grid.Row="0" d:LayoutOverrides="VerticalAlignment" >
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="3" Opacity="0.5"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Button x:Name="button" Content="Register" ToolTip="Create yu own user account" HorizontalAlignment="Left" Margin="577,0,0,161" Width="160" Click="register_click" Background="AliceBlue" FontWeight="Bold" FontFamily="Cooper Black" FontSize="25" Height="70" VerticalAlignment="Bottom">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="button1" HorizontalAlignment="Left" Margin="198,173,0,0" ToolTip="Click to login with registered user name and password" VerticalAlignment="Top" Width="130" Click="login_click" Height="53" FontWeight="Bold" Background="AliceBlue">
+        <Button x:Name="button1" Margin="362,0,362,161" ToolTip="Click to login with registered user name and password" Click="login_click" FontWeight="Bold" Background="AliceBlue" Height="70" VerticalAlignment="Bottom" Width="160">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
-            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center">Login</TextBlock>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="Cooper Black" FontSize="25">Login</TextBlock>
         </Button>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="66" Source="View/photo/logo.png" Margin="231,254,0,0"/>
-        <Button x:Name="button1_Copy"  ToolTip="Go to un registered users view" Click="guest_Click" HorizontalAlignment="Left" Margin="36,173,0,0" VerticalAlignment="Top" Width="130" Height="53" FontWeight="Bold" Background="AliceBlue">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="66" Source="View/photo/logo.png" Margin="41,24,0,0" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment"/>
+        <Button x:Name="button1_Copy"  ToolTip="Go to un registered users view" Click="guest_Click" HorizontalAlignment="Left" Margin="158,0,0,161" Width="160" FontWeight="Bold" Background="AliceBlue" Height="70" VerticalAlignment="Bottom" FontSize="25">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
-            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"><Run Text="Enter as Guest"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" TextAlignment="Center" FontFamily="Cooper Black" Width="133" FontSize="25" Height="60"><Run Text="Enter as Guest"/></TextBlock>
         </Button>
 
     </Grid>
