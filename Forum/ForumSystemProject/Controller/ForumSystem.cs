@@ -92,15 +92,14 @@ namespace ForumSystemProject.Controller
          * @param subject
          * @param UserId
          */
-        public bool newDisscussion(int ForumId, int subForumId, string subject, string UserId, string title, string content)
+        public bool newDisscussion(int ForumId, SubForum subf, string subject, string UserId, string title, string content)
         {
             Forum f = findForum(ForumId);
             if (f == null)
                 return false;
 
-            SubForum sf = f.findSubForum(subForumId);
-            sf.createNewDiscussion(subject, new Message(subject, title, content));
-            return true;
+            //SubForum sf = f.findSubForum(subForumId);
+            return subf.createNewDiscussion(subject, new Message(subject, title, content));
         }
 
         /**

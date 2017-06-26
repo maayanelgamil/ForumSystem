@@ -18,7 +18,7 @@ namespace ForumSystemProject.Controller
         List<Forum> getForums();
         void setView(IView _view);
         bool createNewAppartmentPreference(string mail, string profileType, string smoke, string pets, string sqft, string hobbies);
-        bool newDisscussion(int ForumId, int subForumId, string subject, string userName, string title, string content);
+        bool newDisscussion(int ForumId, SubForum subForum, string subject, string userName, string title, string content);
     }
 }
 

@@ -59,12 +59,6 @@ namespace ForumSystemProject.View
             this.Visibility = Visibility.Visible;
         }
 
-
-        void addProfileWindow_Closed(object sender, EventArgs e)
-        {
-            this.Visibility = Visibility.Visible;
-        }
-
         private void dropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (dropDown.SelectedValue != null)
@@ -77,9 +71,18 @@ namespace ForumSystemProject.View
             }
         }
 
-        private void add_Click(object sender, RoutedEventArgs e)
+
+        private void button_add_Click(object sender, RoutedEventArgs e)
         {
             addDiscussionView add = new addDiscussionView(ref controller, _user, (SubForum)dropDown.SelectedItem);
+            this.Visibility = Visibility.Hidden;
+            add.Show();
+            add.Closed += showSelf;
+        }
+
+        private void showSelf(object sender, EventArgs e)
+        {
+            this.Visibility = Visibility.Visible;
         }
     }
 }
