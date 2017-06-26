@@ -21,11 +21,11 @@
             <RowDefinition Height="46*"/>
             <RowDefinition Height="95*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="84" Source="photo/logo.png" Margin="10,92,0,0" Grid.Row="4" />
-        <TextBlock Text="Home" FontWeight="Bold" FontSize="50" FontFamily="Algerian"  Margin="-64,-22,99,17" Grid.Row="1" Grid.Column="1" />
-        <TextBlock Text="Hello" FontWeight="Bold" FontSize="20" FontFamily="Aharoni" Grid.Row="2" Margin="31,3,0,0" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="53" />
-        <TextBlock x:Name="txt_firstName" TextAlignment="Right" FontWeight="Bold" FontSize="20" FontFamily="Aharoni" Grid.Row="2" Margin="101,3,68,0" Height="21" VerticalAlignment="Top" />
-        <Button x:Name="button_add"  Content="Add discussion" Visibility="Hidden" ToolTip="Add new discussion to the selected subforum"  HorizontalAlignment="Left" Width="108" Margin="-50,55,0,60" Background="#FF00ABD9" Grid.Row="4" Click="add_Click" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="93" Source="photo/logo.png" Margin="10,60.667,0,0" Grid.Row="4" />
+        <TextBlock Text="Home" FontWeight="Bold" FontSize="32" FontFamily="Algerian"  Margin="124,26,111,27" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" />
+        <TextBlock Text="שלום" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="83.667,15,32.333,6" />
+        <TextBlock x:Name="txt_firstName" TextAlignment="Right" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="9.667,15,91.333,6" />
+        <Button x:Name="button_add"  Content="Add discussion" ToolTip="Add new discussion to the selected subforum" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="119,10,0,0" Height="32" Background="#FFFA9034" Grid.Row="4" Click="add_Click" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
