@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <Image x:Name="image" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="87" Source="photo/logo.png" Margin="7,82,0,0" Grid.Row="4" />
         <TextBlock  x:Name="text_createProfile" Text="Add discussion" TextAlignment="Right" FontWeight="Bold" FontSize="22" FontFamily="Algerian"  Margin="-26,21,46,16" Grid.Row="0" Grid.ColumnSpan="2" />
-        <Button x:Name="b_confirm" Content="אשר" VerticalAlignment="Top" Margin="95,59,95,0" Height="19" Background="#FFFA9034" Grid.Row="4" Grid.ColumnSpan="2" Click="b_confirm_Click">
+        <Button x:Name="b_confirm" Content="אשר" VerticalAlignment="Top" Margin="95,59,95,0" Height="19" Background="#FFFA9034" Grid.Row="4" Grid.ColumnSpan="2">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>

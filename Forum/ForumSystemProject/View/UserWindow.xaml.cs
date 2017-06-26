@@ -39,20 +39,6 @@ namespace ForumSystemProject.View
             txt_firstName.Text = "," + name;
         }
 
-
-        private void search_button_Click(object sender, RoutedEventArgs e)
-        {
-            Search_window searchWin = new Search_window(controller);
-            Visibility = Visibility.Hidden;
-            searchWin.Closed += SearchWin_Closed;
-            searchWin.Show();
-        }
-
-        private void SearchWin_Closed(object sender, EventArgs e)
-        {
-            Visibility = Visibility.Hidden;
-        }
-
         void watch_Click(object sender, EventArgs e)
         {
             if (dropDown.SelectedItem == null)
