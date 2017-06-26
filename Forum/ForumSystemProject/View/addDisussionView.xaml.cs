@@ -39,10 +39,14 @@ namespace ForumSystemProject.View
                 MessageBox.Show("Please fill in all the fields");
             else
             {
-                bool success = _controller.newDisscussion(_user.memeberOf.forumID, _sf.subForumId, tb_subject.Text,
+                bool success = _controller.newDisscussion(_user.memeberOf.forumID, _sf, tb_subject.Text,
                      _user.UserName, tb_title.Text, tb_content.Text);
                 if (success)
+                {
                     MessageBox.Show("Discussion was add successfully");
+                    this.Close();
+
+                }
                 else
                     MessageBox.Show("Discussion failed, subject already exists in this subforum");
             }

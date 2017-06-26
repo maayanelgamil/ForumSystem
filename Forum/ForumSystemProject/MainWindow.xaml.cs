@@ -74,7 +74,7 @@ namespace ForumSystemProject
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Bye Bye");
             }
         }
 
