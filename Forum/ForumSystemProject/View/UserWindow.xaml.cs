@@ -77,7 +77,7 @@ namespace ForumSystemProject.View
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-
+            addDiscussionView add = new addDiscussionView(ref controller);
         }
     }
 }

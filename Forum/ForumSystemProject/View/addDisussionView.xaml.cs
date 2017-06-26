@@ -21,12 +21,18 @@ namespace ForumSystemProject.View
     /// </summary>
     public partial class addDiscussionView : Window
     {
-        private IController controller;
-        private string mail;
+        private IController _controller;
+        private string _userName;
 
-        public addDiscussionView()
+        public addDiscussionView(ref IController controller)
         {
             InitializeComponent();
+            _controller = controller;
+        }
+
+        private void b_confirm_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
