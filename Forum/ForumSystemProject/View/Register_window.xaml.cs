@@ -105,5 +105,10 @@ namespace ForumSystemProject.View
                 return false;
             }
         }
+
+        private void tb_userName_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

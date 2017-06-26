@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ForumSystemProject.View"
         mc:Ignorable="d"
-        Title="Register_window" Height="449.6" Width="300" ResizeMode="NoResize">
+        Title="Register_window" Height="600" Width="500" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="photo/background.jpg"/>
+        <ImageBrush ImageSource="photo/1.jpg"/>
     </Window.Background>
     <Grid Margin="0,0,0.6,6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="205*"/>
-            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="200*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="42*"/>
+            <RowDefinition Height="75
+                           *"/>
             <RowDefinition Height="37*"/>
             <RowDefinition Height="37*"/>
             <RowDefinition Height="37*"/>
@@ -27,26 +28,26 @@
             <RowDefinition Height="37*"/>
 
         </Grid.RowDefinitions>
-        <TextBlock x:Name="txt_headLine" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" Margin="81,10,60.8,0" TextWrapping="Wrap" Text="Registration" VerticalAlignment="Top" Width="151" FontFamily="Guttman Aharoni" FontWeight="Bold" FontSize="18" TextDecorations="{x:Null}"/>
+        <TextBlock x:Name="txt_headLine" Height="43" Margin="-46,36,82,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Guttman Aharoni" FontWeight="Bold" FontSize="18" TextDecorations="{x:Null}" Grid.Column="1"><Run FontSize="40" FontFamily="Cooper Black" Text="Registration"/><LineBreak/><Run FontSize="40" FontFamily="Cooper Black" Text="ration"/></TextBlock>
 
-        <TextBlock x:Name="txt_mail" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="9.4,13.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <TextBox x:Name="tb_mail" HorizontalAlignment="Left" Height="27" Margin="40,8.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBlock x:Name="txt_mail" Grid.Column="0" HorizontalAlignment="Right" Height="22" Margin="9.4,13.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="78" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" FontSize="20"/>
+        <TextBox x:Name="tb_mail" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="40,8.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
 
-        <TextBlock x:Name="txt_password" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10.4,13,-0.4,0" Grid.Row="3" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <TextBox x:Name="tb_password" HorizontalAlignment="Left" Height="27" Margin="40,8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBlock x:Name="txt_password" Grid.Column="0" HorizontalAlignment="Right" Height="28" Margin="10,13,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="113" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" FontSize="20"/>
+        <TextBox x:Name="tb_password" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="40,8,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
 
-        <TextBlock x:Name="txt_firstName" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10.4,12.8,-0.4,0" Grid.Row="4" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <TextBox x:Name="tb_firstName" PreviewTextInput="txt_firstName_PreviewTextInput" HorizontalAlignment="Left" Height="27" Margin="40,7.8,0,0" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <TextBlock x:Name="txt_firstName" Grid.Column="0" HorizontalAlignment="Right" Height="22" Margin="10,13,0,0" Grid.Row="4" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="113" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" FontSize="20"/>
+        <TextBox x:Name="tb_firstName" Grid.Column="1" PreviewTextInput="txt_firstName_PreviewTextInput" HorizontalAlignment="Left" Height="27" Margin="40,7.8,0,0" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
 
-        <TextBlock x:Name="txt_lastName" Grid.Column="1" HorizontalAlignment="Left" Margin="9.4,13.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Last Name" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}" Height="24" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" PreviewTextInput="txt_firstName_PreviewTextInput" Height="27" Margin="40,8.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="95" Source="photo/logo.png" Margin="10,30.4,0,0" Grid.Row="8" Grid.RowSpan="2" />
+        <TextBlock x:Name="txt_lastName" Grid.Column="0" HorizontalAlignment="Right" Margin="9,14,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Last Name" Width="114" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" Height="24" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Grid.Column="1" PreviewTextInput="txt_firstName_PreviewTextInput" Height="27" Margin="40,8.6,0,0" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="60" Source="photo/logo.png" Margin="25,21,0,0" />
 
-        <TextBlock x:Name="txt_userName" Grid.Column="1" HorizontalAlignment="Left" Margin="10.4,13.4,-0.4,47" Grid.Row="1" TextWrapping="Wrap" Text="User name" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}" Grid.RowSpan="2"/>
-        <TextBox x:Name="tb_userName" HorizontalAlignment="Left" Height="27" Margin="40,10.4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
-        <ComboBox x:Name="dropDown" Grid.Column="0" ItemsSource="{Binding Path=forums}"  Grid.Row="6"  Margin="40,10,10,10" DisplayMemberPath="Subject"></ComboBox>
-        <Button x:Name="b_fin"  ToolTip="Click when all the fields are done to crreate your account" Content="Done" HorizontalAlignment="Left" Height="21" Margin="116,10,0,0" Grid.Row="7" VerticalAlignment="Top" Width="62" FontFamily="Guttman-Aharoni" FontWeight="Bold" Click="done_Click"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="19" Margin="158,41,-0.2,0" TextWrapping="Wrap" Text="All fields required" VerticalAlignment="Top" Width="135" FontSize="10" FontFamily="Guttman-Aharoni" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="text_forums" Grid.Column="1" HorizontalAlignment="Left" Margin="10,7,-9,0" Grid.Row="6" TextWrapping="Wrap" Text="Forum To Register" Width="87" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}" Height="34" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txt_userName" Grid.Column="0" HorizontalAlignment="Right" Margin="10,13,0,14" Grid.Row="1" TextWrapping="Wrap" Text="User name" Width="113" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" FontSize="20"/>
+        <TextBox x:Name="tb_userName" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="40,10.4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" TextChanged="tb_userName_TextChanged"/>
+        <ComboBox x:Name="dropDown" Grid.Column="1" ItemsSource="{Binding Path=forums}"  Grid.Row="6"  Margin="40,10,108,10" DisplayMemberPath="Subject"></ComboBox>
+        <Button x:Name="b_fin"  ToolTip="Click when all the fields are done to crreate your account" Content="done" HorizontalAlignment="Left" Height="46" Grid.Row="8" VerticalAlignment="Top" Width="101" FontFamily="Cooper Black" FontWeight="Bold" Click="done_Click" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" FontSize="20" Margin="12,0,0,0"/>
+        <TextBlock x:Name="textBlock" Height="19" Margin="10,84,150,-5" TextWrapping="Wrap" Text="All fields required" VerticalAlignment="Top" FontSize="16" FontFamily="Guttman-Aharoni" Grid.Column="1"/>
+        <TextBlock x:Name="text_forums" Grid.Column="0" HorizontalAlignment="Right" Margin="0,3,0,0" Grid.Row="6" TextWrapping="Wrap" Text="Forum To Register" Width="113" FontFamily="Cooper Black" FontWeight="Bold" TextDecorations="{x:Null}" Height="45" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </Window>

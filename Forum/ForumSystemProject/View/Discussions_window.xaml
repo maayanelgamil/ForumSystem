@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Discussions_window" Height="300" Width="300">
     <Window.Background>
-        <ImageBrush ImageSource="photo/background.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="photo/1.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
         <ListView x:Name="list_view" Margin="20" ItemsSource="{Binding Path=discussions}" >
