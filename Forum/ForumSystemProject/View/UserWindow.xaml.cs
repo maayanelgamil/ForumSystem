@@ -24,6 +24,7 @@ namespace ForumSystemProject.View
     {
         IController controller;
         string userName;
+        UserAccount _user;
         public List<SubForum> subForums { get; set; }
 
         public UserWindow(string name, IController _controller, UserAccount user)
@@ -32,6 +33,7 @@ namespace ForumSystemProject.View
             InitializeComponent();
             controller = _controller;
             this.userName = name;
+            _user = user;
             subForums = new List<SubForum>();
             subForums = user.memeberOf.getSubforums();
             this.DataContext = this;
@@ -77,7 +79,7 @@ namespace ForumSystemProject.View
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
-            addDiscussionView add = new addDiscussionView(ref controller);
+            addDiscussionView add = new addDiscussionView(ref controller, _user, (SubForum)dropDown.SelectedItem);
         }
     }
 }

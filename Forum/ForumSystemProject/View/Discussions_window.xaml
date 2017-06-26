@@ -14,11 +14,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="Subject: " />
+                        <TextBlock Text="Discussion subject: " />
                         <TextBlock Text="{Binding Subject}" FontWeight="Bold" />
-                        <TextBlock Text="Number Of Comment: " />
-                        <TextBlock Text="{Binding ElementName=list_view, Path=Items.Count, Mode=OneWay}" FontWeight="Bold" />
-                    </StackPanel>
+                     </StackPanel>
                 </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

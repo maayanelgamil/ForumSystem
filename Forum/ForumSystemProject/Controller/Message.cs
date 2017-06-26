@@ -15,6 +15,14 @@ namespace ForumSystemProject.Controller
         private DateTime PublishedDate;
         private string Subject;
         private string Content;
+        private string _title;
+
+        public Message(string subject, string title, string content)
+        {
+            _title = title;
+            Subject = subject;
+            Content = content;
+        }
 
         /**
          * 
