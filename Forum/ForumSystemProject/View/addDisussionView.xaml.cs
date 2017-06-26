@@ -21,12 +21,31 @@ namespace ForumSystemProject.View
     /// </summary>
     public partial class addDiscussionView : Window
     {
-        private IController controller;
-        private string mail;
+        private IController _controller;
+        private UserAccount _user;
+        private SubForum _sf;
 
-        public addDiscussionView()
+        public addDiscussionView(ref IController controller, UserAccount user, SubForum sf)
         {
             InitializeComponent();
+            _controller = controller;
+            _user = user;
+            _sf = sf;
+        }
+
+        private void b_confirm_Click(object sender, RoutedEventArgs e)
+        {
+            if (tb_subject.Text.Equals("") || tb_content.Text.Equals("") || tb_title.Text.Equals(""))
+                MessageBox.Show("Please fill in all the fields");
+            else
+            {
+                bool success = _controller.newDisscussion(_user.memeberOf.forumID, _sf.subForumId, tb_subject.Text,
+                     _user.UserName, tb_title.Text, tb_content.Text);
+                if (success)
+                    MessageBox.Show("Discussion was add successfully");
+                else
+                    MessageBox.Show("Discussion failed, subject already exists in this subforum");
+            }
         }
     }
 }

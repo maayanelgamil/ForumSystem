@@ -11,7 +11,7 @@ namespace ForumSystemProject.Controller
         List<SubForumManager> managedBy;
         List<Disscusion> composed;
         private string subject;
-        private int subForumId;
+        public int subForumId;
 
         public string Subject
         {
@@ -91,10 +91,16 @@ namespace ForumSystemProject.Controller
             throw new NotImplementedException();
         }
 
-        public void createNewDiscussion(string subject, Message opening)
+        public bool createNewDiscussion(string subject, Message opening)
         {
-            Disscusion d = new Disscusion(this, subject, new Message());
-            composed.Add(d);
+            Disscusion discussion = new Disscusion(this, subject, opening);
+            var subjectFound = composed.Find((d) => d.Subject == subject);
+            if (subjectFound == null)
+            {
+                composed.Add(discussion);
+                return true;
+            }
+            else return false;
         }
     }
 }
